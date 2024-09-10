@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List of Cocktails</title>
+</head>
+<body>
+<h1>List of Cocktails</h1>
+
+<ul>
+    <!-- Iterér gennem cocktails-listen -->
+    <li th:each="cocktail : ${cocktails}">
+        <!-- Vis cocktailens navn -->
+        <h2 th:text="${cocktail.name}"></h2>
+
+        <!-- Iterér gennem ingredienserne for hver cocktail -->
+        <ul>
+            <li th:each="ingredient : ${cocktail.ingredientList}">
+                <span th:text="${ingredient.name}"></span>:
+                <span th:text="${ingredient.quantityInMl}"></span> ml
+            </li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

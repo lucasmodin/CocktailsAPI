@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li th:each="cocktail : ${cocktails}">
+            <h2 th:text="${cocktail.name}"> </h2>
+            <ul>
+                <li th:each="ingredient : ${cocktail.ingredientList}">
+                    <span th:text="${ingredient.name}"></span>:
+                    <span th:text="${ingredient.quantityInMl}"></span> ml
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

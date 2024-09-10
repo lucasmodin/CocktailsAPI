@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>List of Cocktail</title>
+</head>
+  <h1 th:text="${cocktail.name}"></h1>
+    <ul>
+      <li th:each="ingredient : ${cocktail.ingredientList}">
+          <span th:text="${ingredient.name}"></span>
+          <span th:text="${ingredient.quantityInMl}"></span> ml
+      </li>
+    </ul>
+<body>
+</body>
+</html>
